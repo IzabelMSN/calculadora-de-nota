@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">   
+    <link rel="stylesheet" href="/css/erros.css">
+    <title>Calculadora de nota</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+            width: {
+                '128': '36rem',
+            },
+            height: {
+                '128': '28rem',
+            },
+            fontFamily:{
+                nunito: ['Nunito', 'serif']
+            },
+            }
+          }
+        }
+      </script>
+</head>
+<body class="bg-gradient-to-r from-blue-500 to-purple-400 flex justify-center items-center h-screen font-nunito">
+    <main class="flex justify-center items-center">
+        <div class="flex flex-col rounded-2xl h-128 w-128 bg-slate-50 mr-10">
+            <h1 class="text-5xl text-center mt-8">Calcule sua média final</h1>
+
+            <form class="mt-12">
+                <label for="materia" class="ml-8">Selecione a matéria que queira calcular a média final:</label>
+                <select name="materia" id="materia" class="mt-8 ml-8 w-52 h-10  border-2 rounded-md shadow-md">
+                    <option value="arte">Arte</option>
+                    <option value="edcucacaoFisica">Educação Física</option>
+                    <option value="espanhol">Espanhol</option>
+                    <option value="ingles">Inglês</option>
+                    <option value="portugues">Português</option>
+                    <option value="literatura">Literatura</option>
+                    <option value="ensinoReligioso">Ensino Religioso</option>
+                    <option value="filosofia">Filosofia</option>
+                    <option value="geografia">Geografia</option>
+                    <option value="historia">História</option>
+                    <option value="sociologia">Sociologia</option>
+                    <option value="matematica">Matemática</option>
+                    <option value="biologia">Biologia</option>
+                    <option value="fisica">Física</option>
+                    <option value="quimica">Química</option>
+                </select>
+
+                <div class="flex">
+                    <div class="flex flex-col m-8">
+                        <label for="nota1" class="mb-2 text-sm">Nota 1° Trimestre:</label>
+                        <input type="text" name="n1" id="nota1" class="w-32 h-6 border-2 rounded-md shadow-md">
+                    </div>
+                    <div class="flex flex-col m-8">
+                        <label for="nota2" class="mb-2 text-sm">Nota 2° Trimestre:</label>
+                        <input type="text" name="n2" id="nota2" class="w-32 h-6 border-2 rounded-md shadow-md">
+                    </div>
+                    <div class="flex flex-col m-8">
+                        <label for="nota3" class="mb-2 text-sm">Nota 3° Trimestre:</label>
+                        <input type="text" name="n3" id="nota3" class="w-32 h-6 border-2 rounded-md shadow-md">
+                    </div>
+                </div>
+                <button id="btnResultado" class="ml-8 bg-gradient-to-r from-blue-500 to-purple-400 w-32 h-8 rounded-lg text-white">Calcular</button>
+            </form> 
+            <div class="flex">
+                <ul id="resultadoFinalErro" class="ml-8 mt-4"></ul>
+                <span id="resultadoFinal" class="ml-8 mt-4"></span>
+            </div>
+        </div>
+               
+
+        <div class="flex flex-col rounded-2xl h-128 w-128 bg-slate-50">
+            <h1 class="text-5xl text-center mt-8">Calcule sua nota</h1>
+
+            <form class="mt-12">
+                <label for="rMateria" class="ml-8">Selecione a matéria para saber o quanto precisa para passar de ano:</label>
+                <select name="rMateria" id="rMateria" class="mt-8 ml-8 w-52 h-10  border-2 rounded-md shadow-md">
+                    <option value="arte">Arte</option>
+                    <option value="edcucacaoFisica">Educação Física</option>
+                    <option value="espanhol">Espanhol</option>
+                    <option value="ingles">Inglês</option>
+                    <option value="portugues">Português</option>
+                    <option value="literatura">Literatura</option>
+                    <option value="ensinoReligioso">Ensino Religioso</option>
+                    <option value="filosofia">Filosofia</option>
+                    <option value="geografia">Geografia</option>
+                    <option value="historia">História</option>
+                    <option value="sociologia">Sociologia</option>
+                    <option value="matematica">Matemática</option>
+                    <option value="biologia">Biologia</option>
+                    <option value="fisica">Física</option>
+                    <option value="quimica">Química</option>
+                </select>
+
+                <div class="flex justify-center">
+                    <div class="flex flex-col m-8">
+                        <label for="n1" class="mb-2 text-sm">Nota 1° Trimestre:</label>
+                        <input type="text" name="n1" id="n1" class="w-32 h-6 border-2 rounded-md shadow-md">
+                    </div>
+                    <div class="flex flex-col m-8">
+                        <label for="n2" class="mb-2 text-sm">Nota 2° Trimestre:</label>
+                        <input type="text" name="n2" id="n2" class="w-32 h-6 border-2 rounded-md shadow-md">
+                    </div>
+                </div>
+                <button id="rBtn" class="ml-8 bg-gradient-to-r from-blue-500 to-purple-400 w-32 h-8 rounded-lg text-white">Calcular</button>
+            </form>  
+            <ul id="resultadoFinalErros" class="ml-8 mt-4"></ul>
+            <span id="rConta" class="ml-8 mt-4"></span>  
+        </div>
+    </main>
+    <script src="/js/calculaNota.js"></script>
+    <script src="/js/descobreNotaFinal.js"></script>
+</body>
+</html>
